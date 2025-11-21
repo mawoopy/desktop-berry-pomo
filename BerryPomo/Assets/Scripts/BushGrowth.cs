@@ -14,6 +14,8 @@ public class BushGrowth : MonoBehaviour
     public GameObject bush7;
     public GameObject berries;
 
+    public int growthstage = 1;
+
     void Start()
     {
         bush0.GetComponent<SpriteRenderer>().enabled = true;
@@ -25,6 +27,55 @@ public class BushGrowth : MonoBehaviour
         bush6.GetComponent<SpriteRenderer>().enabled = false;
         bush7.GetComponent<SpriteRenderer>().enabled = false;
         berries.GetComponent<SpriteRenderer>().enabled = false;
+
+        growthstage = 1;
+    }
+
+    public void Stages()
+    {
+        switch (growthstage) 
+        {
+        case 1:
+            Growth1();
+            Debug.Log("1");
+            break;
+        case 2:
+            Growth2();
+            Debug.Log("2");
+            break;
+        case 3:
+            Growth3();
+            Debug.Log("3");
+            break;
+        case 4:
+            Growth4();
+            Debug.Log("4");
+            break;
+        case 5:
+            Growth5();
+            Debug.Log("5");
+            break;
+        case 6:
+            Growth6();
+            Debug.Log("6");
+            break;
+        case 7:
+            Growth7();
+            Debug.Log("7");
+            break;
+        case 8:
+            GrowBerries();
+            Debug.Log("Berry");
+            break;
+        }
+        
+    }
+
+    public void Growth()
+    {
+        growthstage++;
+
+        Debug.Log("the bush groweth");
     }
 
     void Growth1()
