@@ -73,6 +73,7 @@ public class TransparentWindow : MonoBehaviour {
     }
 
     private void Update() {
+        SetClickthrough(!CodeMonkey.Utils.UtilsClass.IsPointerOverUI());
         SetClickthrough(Physics2D.OverlapPoint(CodeMonkey.Utils.UtilsClass.GetMouseWorldPosition()) == null);
     }
 
